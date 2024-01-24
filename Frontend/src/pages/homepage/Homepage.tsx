@@ -2,25 +2,20 @@ import React from 'react'
 import './Homepage.scss'
 
 const Homepage = () => {
+  const menuItems = ['Shopping List', 'Meals', 'Occasional Chores', 'Events & Reminders']
+
   return (
     <div className="homepage">
       <div className="homepage-titles">
-        <h1> Welcome to FamilyHub</h1>
-        <h2> Your Home's Personal Assistant</h2>
+        <h1>Welcome to FamilyHub</h1>
+        <h2>Your Home's Personal Assistant</h2>
       </div>
       <div className="menu">
-        <button className="menu-button" type="button">
-          Shopping List
-        </button>
-        <button className="menu-button" type="button">
-          Meals
-        </button>
-        <button className="menu-button" type="button">
-          Occasional Chores
-        </button>
-        <button className="menu-button" type="button">
-          Events & Reminders
-        </button>
+        {menuItems.map((item, index) => (
+          <button key={index} className="menu-button" type="button">
+            {item}
+          </button>
+        ))}
       </div>
     </div>
   )
