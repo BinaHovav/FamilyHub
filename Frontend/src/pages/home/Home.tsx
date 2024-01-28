@@ -1,8 +1,9 @@
 import React from 'react'
-import './Homepage.scss'
+import { NavLink } from 'react-router-dom'
+import './Home.scss'
 
 const Homepage = () => {
-  const menuItems = ['Shopping List', 'Meals', 'Occasional Chores', 'Events & Reminders']
+  const menuItems = ['Meals', 'Shopping', 'Chores']
 
   return (
     <div className="homepage">
@@ -12,9 +13,9 @@ const Homepage = () => {
       </div>
       <div className="menu">
         {menuItems.map((item, index) => (
-          <button key={index} className="menu-button" type="button">
+          <NavLink key={index} to={`/${item.toLowerCase()}`} className="menu-button">
             {item}
-          </button>
+          </NavLink>
         ))}
       </div>
     </div>
